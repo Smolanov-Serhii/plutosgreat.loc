@@ -78,7 +78,7 @@ get_header();
                     <?php echo category_description(11); ?>
                 </div>
             </section>
-            <section class="recent_items">
+            <section class="recent_items" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/retro1.jpg);">
                 <h3 class="recent_items__article">Последние публикации</h3>
                 <div class="recent_items__container">
                     <?php
