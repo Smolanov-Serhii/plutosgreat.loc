@@ -59,28 +59,68 @@ get_header();
                     <div class="single_news_item">
                         <a class="item_lnk" href="<?php the_permalink(); ?>"></a>
                         <div class="single_news_item_container">
-                            <div class="single_news_item__img" style="background-image: url("<?php get_the_post_thumbnail_url(); ?>")">
+                            <div class="single_news_item__img" style="background-image: url("<?php echo get_the_post_thumbnail_url(); ?>")">
                             <?php the_post_thumbnail(); ?>
                         </div>
                         <div class="single_news__title">
                             <?php the_title(); ?>
                         </div>
                     </div>
-                    <div class="single_news_item__content">
-                        <?php the_excerpt(); ?>
-                    </div>
+<!--                    <div class="single_news_item__content">-->
+<!--                        --><?php //the_excerpt(); ?>
+<!--                    </div>-->
                 </div>
                 <?php }
                 }
                 wp_reset_query(); ?>
                 </div>
+                <div class="category_description">
+                    <?php echo category_description(11); ?>
+                </div>
+            </section>
+            <section class="recent_items">
+                <h3 class="recent_items__article">Последние публикации</h3>
+                <div class="recent_items__container">
+                    <?php
+                    $args = array(
+                        'showposts' => 5, //сколько показать статей
+                        'orderby' => "data", //сортировка по дате
+                        'exclude' => '',
+                        'caller_get_posts' => 1);
+                    $my_query = new wp_query($args);
+                    if ($my_query->have_posts()) {
+                    while ($my_query->have_posts()) {
+                    $my_query->the_post(); ?>
+                    <div class="single_news_item">
+                        <a class="item_lnk" href="<?php the_permalink(); ?>"></a>
+                        <div class="single_news_item_container">
+                            <div class="single_news_item__img" style="background-image: url('<?php
+                            the_post_thumbnail_url( 'full' );
+                            ?>');">
+                        </div>
+                        <div class="single_news__title">
+                            <?php the_title(); ?>
+                        </div>
+                    </div>
+                    <!--                    <div class="single_news_item__content">-->
+                    <!--                        --><?php //the_excerpt(); ?>
+                    <!--                    </div>-->
+                </div>
+                <?php }
+                }
+                wp_reset_query(); ?>
+                </div>
+            </section>
+            <section class="carousel">
+                <h3 class="carousel__article">Галерея работ</h3>
+                <?php echo do_shortcode('[slick-carousel-slider limit="5"variablewidth="true" centermode="true"]'); ?>
 
             </section>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();
 
 
