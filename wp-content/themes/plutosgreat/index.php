@@ -29,7 +29,7 @@ get_header();
                         'order' => 'ASC'
                     ));
                     foreach ($categories as $args) : ?>
-                        <li class="categories_items__container__item" style="background-image:url(<?php echo z_taxonomy_image_url($args->term_id); ?>">
+                        <li class="categories_items__container__item" style="background-image:url(<?php echo z_taxonomy_image_url($args->term_id); ?>" data-aos="zoom-in-up">
                             <a href="<?php echo get_category_link($args->term_id); ?>"></a>
                             <div class="desc">
                                 <span class="title"><?php echo $args->cat_name; ?></span>
@@ -43,7 +43,7 @@ get_header();
                 </ul>
             </div>
             <section class="metal_items">
-                <img src="<?php echo get_template_directory_uri() . '/src/img/devider_vintage.svg' ?>;">
+                <img src="<?php echo get_template_directory_uri() . '/src/img/devider_vintage.svg' ?>;" data-aos="flip-up">
                 <h3 class="metal_items__article">Изделия из метала</h3>
                 <div class="metal_items__container">
                     <?php
@@ -56,11 +56,13 @@ get_header();
                     if ($my_query->have_posts()) {
                     while ($my_query->have_posts()) {
                     $my_query->the_post(); ?>
-                    <div class="single_news_item">
+                    <div class="single_news_item" data-aos="fade-up">
                         <a class="item_lnk" href="<?php the_permalink(); ?>"></a>
                         <div class="single_news_item_container">
-                            <div class="single_news_item__img" style="background-image: url("<?php echo get_the_post_thumbnail_url(); ?>")">
-                            <?php the_post_thumbnail(); ?>
+                            <div class="single_news_item__img" style="background-image: url('<?php
+                            the_post_thumbnail_url( 'full' );
+                            ?>');">
+<!--                            --><?php //the_post_thumbnail(); ?>
                         </div>
                         <div class="single_news__title">
                             <?php the_title(); ?>
@@ -74,7 +76,7 @@ get_header();
                 }
                 wp_reset_query(); ?>
                 </div>
-                <div class="category_description">
+                <div class="category_description" data-aos="fade-left">
                     <?php echo category_description(11); ?>
                 </div>
             </section>

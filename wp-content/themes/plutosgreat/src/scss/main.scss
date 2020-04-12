@@ -291,19 +291,24 @@ li {
           &:first-child{
             width: calc(50% - 0.964vw);
             margin-top: 0;
+            transition-delay: 0.7s;
           }
           &:nth-child(2){
             width: calc(50% - 0.964vw);
             margin-top: 0;
+            transition-delay: 1.4s;
           }
           &:nth-child(3){
             width: calc(33.3% - 0.964vw);
+            transition-delay: 1.4s;
           }
           &:nth-child(4){
             width: calc(33.3% - 0.964vw);
+            transition-delay: 1.4s;
           }
           &:nth-child(5){
             width: calc(33.3% - 0.964vw);
+            transition-delay: 1.4s;
           }
           &:nth-child(6){
             width: calc(50% - 0.964vw);
@@ -383,11 +388,7 @@ li {
           background-repeat: no-repeat;
           background-position: center;
           margin-bottom: 40vw * $px;
-          img{
-            width: 100%;
-            height: auto;
-            margin: 0;
-          }
+          height: 300vw * $px;
         }
       }
     }
@@ -413,7 +414,7 @@ li {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 50vw * $px 0 50vw * $px 0;
+  padding: 30vw * $px 0 50vw * $px 0;
   .recent_items__article{
     font-family: Alice;
     font-style: normal;
@@ -422,7 +423,7 @@ li {
     line-height: 55vw * $px;
     color: #301C11;
     text-align: center;
-    margin: 20vw * $px;
+    margin: 30vw * $px auto 60vw * $px auto;
   }
   .recent_items__container{
     padding: 0 122vw * $px;
@@ -485,7 +486,7 @@ li {
   }
 }
 section.carousel{
-  padding: 50vw * $px 122vw * $px;
+  padding: 0 122vw * $px 50vw * $px 122vw * $px;
   box-sizing: border-box;
   .carousel__article{
     font-family: Alice;
@@ -495,5 +496,12 @@ section.carousel{
     line-height: 55vw * $px;
     color: #301C11;
     text-align: center;
+  }
+}
+#footer{
+  background-color: #3f1b07;
+  height: 200vw * $px;
+  .container{
+    padding: 0 122vw * $px 50vw * $px 122vw * $px;
   }
 }

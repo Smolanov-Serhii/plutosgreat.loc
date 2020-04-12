@@ -28,6 +28,7 @@ const styleFiles = [
 const scriptFiles = [
    './src/js/lib.js',
    './src/js/slick.js',
+   './src/js/aos.js',
    './src/js/main.js'
 ]
 

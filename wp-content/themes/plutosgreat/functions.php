@@ -123,11 +123,14 @@ add_action( 'widgets_init', 'plutosgreat_widgets_init' );
  * Enqueue scripts and styles.
  */
 function plutosgreat_scripts() {
-    wp_enqueue_style( 'plutosgreat-normalize', get_template_directory_uri() . '/dist/normalizer.css', array(), '1.0.0', false);
+
+    wp_enqueue_style( 'plutosgreat-normalize', get_template_directory_uri() . '/src/scss/normalizer.css', array(), '1.0.0', false);
 	wp_enqueue_style( 'plutosgreat-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.0.0', false);
+	wp_enqueue_style( 'plutosgreat-aos', get_template_directory_uri() . '/src/scss/aos.css', array(), '1.0.0', false);
 
 
 	wp_enqueue_script( 'plutosgreat-navigation', get_template_directory_uri() . '/dist/js/common.js', array(), '1.0.0', true);
+	wp_enqueue_script( 'plutosgreat-aos', get_template_directory_uri() . '/src/js/aos.js', array('jquery'), null, true);
 
 	wp_enqueue_script( 'plutosgreat-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
