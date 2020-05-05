@@ -29,9 +29,25 @@ li {
 #masthead {
   width: 100%;
   position: relative;
+  height: 100vh;
+  max-height: 900vw * $px;
 
   div[id*=metaslider] {
     padding: 0;
+    height: auto;
+    div[id*=metaslider]{
+      height: auto;
+      .flex-viewport{
+        height: auto;
+        ul{
+          height: auto;
+          li{
+            height: 100vh;
+            max-height: 900vw * $px;
+          }
+        }
+      }
+    }
     .caption-wrap{
       width: 720vw * $px;
       height: auto;
@@ -43,7 +59,7 @@ li {
         font-family: Alice;
         font-style: normal;
         font-weight: normal;
-        font-size: 18vw * $px;
+        font-size: 28vw * $px;
         line-height: normal;
         color: #FFFFFF;
         text-align: left;
@@ -78,8 +94,8 @@ li {
             font-family: Alice;
             font-style: normal;
             font-weight: normal;
-            font-size: 18vw * $px;
-            line-height: 21vw * $px;
+            font-size: 21vw * $px;
+            line-height: 23vw * $px;
             color: #FFFFFF;
             text-decoration: none;
           }
@@ -119,8 +135,8 @@ li {
                 font-family: Alice;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 18vw * $px;
-                line-height: 21vw * $px;
+                font-size: 21vw * $px;
+                line-height: 23vw * $px;
                 color: #FFFFFF;
                 text-decoration: none;
               }
@@ -144,6 +160,7 @@ li {
       width: 100%;
       height: auto;
       background-color: rgba(0, 0, 0, 0.6);
+      padding: 0.833vw 0;
 
       .global_container{
         display: flex;
@@ -358,6 +375,7 @@ li {
   margin: auto;
   box-sizing: border-box;
   max-width: 1400px;
+  overflow: hidden;
   .metal_items__article{
     font-family: Alice;
     font-style: normal;
@@ -763,10 +781,24 @@ section.carousel{
         position: absolute;
         bottom: 0;
         left: 20vw * $px;
+        width: 30%;
+        height: auto;
       }
     }
     .feedback{
       color: white;
+      div{
+        form{
+          width: 100%;
+          p{
+            margin: 0.694vw 0;
+          }
+          input{
+            width: 100%;
+            box-sizing: border-box
+          }
+        }
+      }
     }
     .contacts{
       display: flex;
