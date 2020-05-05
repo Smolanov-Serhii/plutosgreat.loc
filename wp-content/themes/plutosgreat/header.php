@@ -29,28 +29,31 @@
         <?php echo do_shortcode('[metaslider id="48"]'); ?>
         <div class="pre_header">
             <div class="container">
-                <div class="logotype">
-                    <?php the_custom_logo(); ?>
+                <div class="global_container">
+                    <div class="logotype">
+                        <?php the_custom_logo(); ?>
+                    </div>
+                    <div class="company_name">
+                        <div class="company">
+                            PLUTOS GREAT
+                        </div>
+                        <div class="description">
+                            изделия из метала
+                        </div>
+                    </div>
+                    <div class="contacts">
+                        <div class="phone">
+                            +38 (067) 225-31-01
+                        </div>
+                        <div class="phone">
+                            +38 (067) 225-31-01
+                        </div>
+                        <div class="email">
+                            plutosmetal@gmail.com
+                        </div>
+                    </div>
                 </div>
-                <div class="company_name">
-                    <div class="company">
-                        PLUTOS GREAT
-                    </div>
-                    <div class="description">
-                        изделия из метала
-                    </div>
-                </div>
-                <div class="contacts">
-                    <div class="phone">
-                        +38 (067) 225-31-01
-                    </div>
-                    <div class="phone">
-                        +38 (067) 225-31-01
-                    </div>
-                    <div class="email">
-                        plutosmetal@gmail.com
-                    </div>
-                </div>
+
             </div>
             <nav class="main_navigation">
                     <?php wp_nav_menu(array(
