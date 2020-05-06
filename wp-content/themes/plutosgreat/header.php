@@ -16,6 +16,11 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="stylesheet" type="text/css" href="<?php get_template_directory_uri()?> . /slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php get_template_directory_uri()?> ./slick/slick-theme.css"/>
+<!--    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+<!--    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+<!--    <script type="text/javascript" src="--><?php //get_template_directory_uri()?><!-- ./src/js/slick.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>

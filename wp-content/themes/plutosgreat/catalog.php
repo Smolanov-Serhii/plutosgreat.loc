@@ -1,8 +1,7 @@
 <?php
 /**
  * The template for displaying archive pages
- *
- *
+ * Template Name: Категория
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package plutosgreat

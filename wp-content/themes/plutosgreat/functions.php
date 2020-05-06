@@ -8,6 +8,25 @@
  */
 
 
+
+//обрезание описания рубрик в админке сайта start
+function wph_trim_cats() {
+    add_filter('get_terms', 'wph_truncate_cats_description', 10, 2);
+}
+function wph_truncate_cats_description($terms, $taxonomies) {
+    if('category' != $taxonomies[0])
+        return $terms;
+    foreach($terms as $key=>$term) {
+        $terms[$key]->description = mb_substr($term->description, 0, 80);
+        if($term->description != '') {
+            $terms[$key]->description .= '...';
+        }
+    }
+    return $terms;
+}
+add_action('admin_head-edit-tags.php', 'wph_trim_cats');
+//обрезание описания рубрик в админке сайта end
+
 add_filter( 'get_the_archive_title', 'artabr_remove_name_cat' );
 function artabr_remove_name_cat( $title ){
     if ( is_category() ) {
@@ -135,7 +154,7 @@ function plutosgreat_scripts() {
 	wp_enqueue_style( 'plutosgreat-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.0.0', false);
 	wp_enqueue_style( 'plutosgreat-aos', get_template_directory_uri() . '/src/scss/aos.css', array(), '1.0.0', false);
 
-
+    wp_enqueue_script( 'plutosgreat-slick', get_template_directory_uri() . '/src/js/slick.js', array('jquery'), null, true);
 	wp_enqueue_script( 'plutosgreat-navigation', get_template_directory_uri() . '/dist/js/common.js', array(), '1.0.0', true);
 	wp_enqueue_script( 'plutosgreat-aos', get_template_directory_uri() . '/src/js/aos.js', array('jquery'), null, true);
 
