@@ -6,10 +6,62 @@
  *
  * @package plutosgreat
  */
+// удаляет H2 из шаблона пагинации
+add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ){
+    /*
+    Вид базового шаблона:
+    <nav class="navigation %1$s" role="navigation">
+        <h2 class="screen-reader-text">%2$s</h2>
+        <div class="nav-links">%3$s</div>
+    </nav>
+    */
+
+    return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+}
+
+// выводим пагинацию
+the_posts_pagination( array(
+    'end_size' => 2,
+) );
 
 
+function the_truncated_post($symbol_amount) {
+    $filtered = strip_tags( preg_replace('@<style[^>]*?>.*?</style>@si', '', preg_replace('@<script[^>]*?>.*?</script>@si', '', apply_filters('the_content', get_the_content()))) );
+    echo substr($filtered, 0, strrpos(substr($filtered, 0, $symbol_amount), ' ')) . '...';
+}
 
+//обрезание описания рубрик в админке сайта start
+function wph_trim_cats() {
+    add_filter('get_terms', 'wph_truncate_cats_description', 10, 2);
+}
+function wph_truncate_cats_description($terms, $taxonomies) {
+    if('category' != $taxonomies[0])
+        return $terms;
+    foreach($terms as $key=>$term) {
+        $terms[$key]->description = mb_substr($term->description, 0, 80);
+        if($term->description != '') {
+            $terms[$key]->description .= '...';
+        }
+    }
+    return $terms;
+}
+add_action('admin_head-edit-tags.php', 'wph_trim_cats');
+//обрезание описания рубрик в админке сайта end
 
+add_filter( 'get_the_archive_title', 'artabr_remove_name_cat' );
+function artabr_remove_name_cat( $title ){
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    }
+    return $title;
+}
 if ( ! function_exists( 'plutosgreat_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -128,7 +180,7 @@ function plutosgreat_scripts() {
 	wp_enqueue_style( 'plutosgreat-style', get_template_directory_uri() . '/dist/css/style.css', array(), '1.0.0', false);
 	wp_enqueue_style( 'plutosgreat-aos', get_template_directory_uri() . '/src/scss/aos.css', array(), '1.0.0', false);
 
-
+    wp_enqueue_script( 'plutosgreat-slick', get_template_directory_uri() . '/src/js/slick.js', array('jquery'), null, true);
 	wp_enqueue_script( 'plutosgreat-navigation', get_template_directory_uri() . '/dist/js/common.js', array(), '1.0.0', true);
 	wp_enqueue_script( 'plutosgreat-aos', get_template_directory_uri() . '/src/js/aos.js', array('jquery'), null, true);
 

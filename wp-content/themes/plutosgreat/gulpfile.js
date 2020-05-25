@@ -22,7 +22,9 @@ const sass = require('gulp-sass');
 const styleFiles = [
    './src/scss/main.scss',
    './src/scss/slick.scss',
+   './src/scss/slick-theme.scss',
    './src/scss/media.css'
+
 ]
 //Порядок подключения js файлов
 const scriptFiles = [

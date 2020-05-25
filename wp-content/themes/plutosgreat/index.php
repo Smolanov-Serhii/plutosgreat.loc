@@ -12,7 +12,15 @@
  * @package plutosgreat
  */
 
-get_header();
+if (is_home()) {
+    get_header();
+} elseif (is_404()) {
+    get_header('404');
+} else {
+    get_header();
+}
+
+
 ?>
 
 	<div id="primary" class="content-area">
