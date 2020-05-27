@@ -20,10 +20,9 @@
             </div>
             <div class="contacts">
                 <h3>Контакты</h3>
-                <span class="">тел: 38 (099) 999 99 99</span>
-                <span class="">тел: 38 (099) 999 99 99</span>
-                <span class="">тел: 38 (099) 999 99 99</span>
-                <span class="">e-mail: manager@gmail.com</span>
+                <span class="">тел: +38 (095) 131-31-01</span>
+                <span class="">тел: +38 (067) 225-31-01</span>
+                <span class="">e-mail: plutosmetal@gmail.com</span>
                 <div class="socials">
                     <a href="facebook">
                         <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">

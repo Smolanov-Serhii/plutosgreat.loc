@@ -48,7 +48,7 @@
                     </div>
                     <div class="contacts">
                         <div class="phone">
-                            +38 (067) 225-31-01
+                            +38 (095) 131-31-01
                         </div>
                         <div class="phone">
                             +38 (067) 225-31-01

@@ -105,7 +105,16 @@ if (is_home()) {
                         </div>
 
 
-                        <div class="category_desc">"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur </div>
+                        <div class="category_desc">
+                            <p>Компания предлагает такие услуги как разработка и изготовление
+                                индивидуальных изделий из метала по Вашим или своим эскизам.
+                                Такие виды изделий как цветы, винтажные ограды и решотки,
+                                сложные формы и эллементы к ним.</p>
+                            <p>
+                                На сайте компании предостален перечень продукции, где Вы обязательно найдёте то что Вам понравится.
+                                Перейдите в соответствующую категорию для просмотра. Если у Вас возникли трудности в поиске то можете обратится к специалистам компании и они Вам обязательно помогут.
+                            </p>
+                            </div>
                     </div>
                     <div class="categoty_list_container">
                         <h3 class="title">Наши предложения</h3>
@@ -146,52 +155,53 @@ if (is_home()) {
                                 на рынке
                             </div>
                             <div class="desc">
-                                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                Долгое время компания занимает одно из лидирующих мест на рынке предоставления услуг по изготовлению изделий из метала.
                             </div>
                         </div>
                         <div class="our_pluses__item">
                             <div class="title">
-                                6 лет<br>
-                                на рынке
+                                Лазерная <br>
+                                резка
                             </div>
                             <div class="desc">
-                                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                Такое оборудование значительно сокращает время на производство изделий, а также позволяет снизить его итоговую стоимость.
                             </div>
                         </div>
                         <div class="our_pluses__item">
                             <div class="title">
-                                6 лет<br>
-                                на рынке
+                                Дробеструйная <br>
+                                обработка
                             </div>
                             <div class="desc">
-                                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                Технология применяется для: чистки и защиты металла, удаления окалин после ковки, зачистки после сварки и другого.
                             </div>
                         </div>
                         <div class="our_pluses__item">
                             <div class="title">
-                                6 лет<br>
-                                на рынке
+                                Создание <br>
+                                эскизных проектов
                             </div>
                             <div class="desc">
-                                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                Наши художники смогут нарисовать эскиз "с нуля" или по готовому варианту. После утверждения мы сможем предоставить расчеты прочности, комфортности и практичного использования изделий.
                             </div>
                         </div>
                         <div class="our_pluses__item">
                             <div class="title">
-                                6 лет<br>
-                                на рынке
+                                Художественное <br>
+                                нанесение патины
                             </div>
                             <div class="desc">
-                                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                Такой вид оформления значительно влияет на внешний вид изделия, поэтому практически ко всей нашей продукции применяется художественное нанесение патины.
+
                             </div>
                         </div>
                         <div class="our_pluses__item">
                             <div class="title">
-                                6 лет<br>
-                                на рынке
+                                Индидуальный<br>
+                                подход
                             </div>
                             <div class="desc">
-                                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                Мы предлагаем уникальные, а не шаблонные изделия исходя из пожеланий клиента и его материальных возможностей.
                             </div>
                         </div>
                     </div>
@@ -205,16 +215,16 @@ if (is_home()) {
                         <div class="reviews__item">
                             <div class="reviews__pers">
                                 <div class="date">
-                                    15 сентября 2019
+                                    10 мая 2020
                                 </div>
                                 <div class="name">
-                                    Елена Кутовая
+                                    Алина Самойлова
                                 </div>
                                 <div class="subj">
-                                    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account. "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                    Заказали новый забор для дачного участка. Работу выполнили очень быстро! Нам все понравилось!
                                 </div>
                             </div>
-                            <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/rew.png);">
+                            <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/rev1.png);">
                             </div>
                         </div>
                         <div class="reviews__item">
@@ -223,13 +233,13 @@ if (is_home()) {
                                     15 сентября 2019
                                 </div>
                                 <div class="name">
-                                    Елена Кутовая
+                                    Оксана Макаренко
                                 </div>
                                 <div class="subj">
-                                    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account. "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+                                    Обратились в эту компанию не случайно! Друзья очень хорошо отзывались о PLUTOS great. Мастера сделали нам прекрасную беседку, теперь каждое утро пьем кофе на свежем воздухе!
                                 </div>
                             </div>
-                            <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/rew.png);">
+                            <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/rev2.png);">
                             </div>
                         </div>
                     </div>
