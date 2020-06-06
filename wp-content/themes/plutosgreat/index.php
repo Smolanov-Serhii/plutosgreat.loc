@@ -37,7 +37,7 @@ if (is_home()) {
 
                     $categories = get_categories(array(
                         'orderby' => 'name',
-                        'include' => '2,3,4,5,6',
+                        'include' => '2,3,21,5,6',
 //                      'exclude' => '11',
                         'order' => 'ASC'
                     ));
@@ -64,7 +64,7 @@ if (is_home()) {
                     <div class="metal_items__container">
                         <?php
                         $args = array(
-                            'category__in' => 11, //из какой категории вывести (удалите эту строку, если хотите, чтобы показовало последние материалы из всех рубрик сразу)
+                            'category__in' => 49, //из какой категории вывести (удалите эту строку, если хотите, чтобы показовало последние материалы из всех рубрик сразу)
                             'showposts' => 4, //сколько показать статей
                             'orderby' => "data", //сортировка по дате
                             'caller_get_posts' => 1);
@@ -93,7 +93,7 @@ if (is_home()) {
                         wp_reset_query(); ?>
                     </div>
                     <div class="category_description" data-aos="fade-left">
-                        <?php echo category_description(11); ?>
+                        <?php echo category_description(49); ?>
                     </div>
                 </div>
 
@@ -123,8 +123,8 @@ if (is_home()) {
 
                     $categories = get_categories(array(
                         'orderby' => 'name',
-                        'include' => '2,3,4,5,6',
-//                      'exclude' => '11',
+                        'include' => '2,3,21,5,6',
+//                      'exclude' => '49',
                         'order' => 'ASC'
                     ));
                     foreach ($categories as $args) : ?>
