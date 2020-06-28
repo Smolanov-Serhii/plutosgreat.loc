@@ -1,253 +1,137 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
+ * The template for displaying archive pages
+ * Template Name: Категория
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package plutosgreat
  */
 
-if (is_home()) {
-    get_header();
-} elseif (is_404()) {
-    get_header('404');
-} else {
-    get_header();
-}
-
-
+get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-            <div class="categories_items" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/our_productipon_bg.jpg);">
-                <h3 class="our_products">Наша продукция</h3>
-                <div class="vintage_element_left" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/category_itm_vintage.png);">
-                </div>
-                <ul class="categories_items__container">
-
-
-
-                    <?php
-
-                    $categories = get_categories(array(
-                        'orderby' => 'name',
-                        'include' => '2,3,21,5,6',
-//                      'exclude' => '11',
-                        'order' => 'ASC'
-                    ));
-                    foreach ($categories as $args) : ?>
-                        <li class="categories_items__container__item" style="background-image:url(<?php echo z_taxonomy_image_url($args->term_id); ?>" data-aos="zoom-in-up">
-                            <a href="<?php echo get_category_link($args->term_id); ?>"></a>
-                            <div class="desc">
-                                <span class="title"><?php echo $args->cat_name; ?></span>
-                                <span class="description">
-                                    <?php echo category_description($args->term_id); ?>
-                                </span>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-
-                </ul>
-                <div class="vintage_element_right" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/category_itm_vintage.png);">
-                </div>
-            </div>
-            <section class="metal_items">
-                <div class="global_container">
-                    <img src="<?php echo get_template_directory_uri() . '/src/img/devider_vintage.svg' ?>;" data-aos="flip-up">
-                    <h3 class="metal_items__article">Изделия из метала</h3>
-                    <div class="metal_items__container">
-                        <?php
-                        $args = array(
-                            'category__in' => 49, //из какой категории вывести (удалите эту строку, если хотите, чтобы показовало последние материалы из всех рубрик сразу)
-                            'showposts' => 4, //сколько показать статей
-                            'orderby' => "data", //сортировка по дате
-                            'caller_get_posts' => 1);
-                        $my_query = new wp_query($args);
-                        if ($my_query->have_posts()) {
-                            while ($my_query->have_posts()) {
-                                $my_query->the_post(); ?>
-                                <div class="single_news_item" data-aos="fade-up">
-                                    <a class="item_lnk" href="<?php the_permalink(); ?>"></a>
-                                    <div class="single_news_item_container">
-                                        <div class="single_news_item__img" style="background-image: url('<?php
-                                        the_post_thumbnail_url( 'full' );
-                                        ?>');">
-                                            <!--                            --><?php //the_post_thumbnail(); ?>
-                                        </div>
-                                        <div class="single_news__title">
-                                            <?php the_title(); ?>
-                                        </div>
-                                    </div>
-                                    <!--                    <div class="single_news_item__content">-->
-                                    <!--                        --><?php //the_excerpt(); ?>
-                                    <!--                    </div>-->
-                                </div>
-                            <?php }
-                        }
-                        wp_reset_query(); ?>
-                    </div>
-                    <div class="category_description" data-aos="fade-left">
-                        <?php echo category_description(49); ?>
-                    </div>
-                </div>
-
-            </section>
-            <section class="category_descriptions" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/category_descriptions_bg.jpg);">
-                <div class="container global_container">
-                    <div class="image_container">
-                        <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/category_descriptions.png);">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="curent_category_description"
+                 style="background-size: auto; background-repeat: repeat; background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/2447104b84281c8c4b6089.jpg);">
+                <div class="global_container_catalog_page">
+                    <div class="global_container_category_list" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/uzor_menu.svg);">
+                        <div class="page-header">
+                            <h2 class="page-title">Каталог</h2>
                         </div>
-
-
-                        <div class="category_desc">
-                            <p>Компания предлагает такие услуги как разработка и изготовление
-                                индивидуальных изделий из метала по Вашим или своим эскизам.
-                                Такие виды изделий как цветы, винтажные ограды и решотки,
-                                сложные формы и эллементы к ним.</p>
-                            <p>
-                                На сайте компании предостален перечень продукции, где Вы обязательно найдёте то что Вам понравится.
-                                Перейдите в соответствующую категорию для просмотра. Если у Вас возникли трудности в поиске то можете обратится к специалистам компании и они Вам обязательно помогут.
-                            </p>
-                            </div>
-                    </div>
-                    <div class="categoty_list_container">
-                        <h3 class="title">Наши предложения</h3>
-                        <ul>
-                        <?php
-
-                    $categories = get_categories(array(
-                        'orderby' => 'name',
-                        'include' => '2,3,21,5,6',
-//                      'exclude' => '49',
-                        'order' => 'ASC'
-                    ));
-                    foreach ($categories as $args) : ?>
-
-                        <li class="categories_items__container__item">
-                            <a class="cat_name" href="<?php echo get_category_link($args->term_id); ?>">
-                            <div class="desc">
-                                <span class="title"><?php echo $args->cat_name; ?></span>
-                                <span class="description">
-                                    <?php echo category_description($args->term_id); ?>
-                                </span>
-                            </div>
-                            </a>
-                        </li>
-                        <?php endforeach; ?>
+                        <ul class="list">
+                            <?php
+                            global $post;
+                            $category = get_the_category( get_the_ID() );
+                            $cat = get_category(get_query_var('cat'),false);
+                            $cat_parent = $cat->parent; // ID родительской категории
+                            $current_cat = get_query_var('cat'); // ID текущей категории
+                            $cat_top = $category[0]->parent;
+                            $ancestors = get_ancestors($cat_top, 'category');
+                            $ancestors_cat = $ancestors[0];
+                            if ($cat_parent == 0) {
+                                wp_list_categories('depth=2&hide_empty=0&title_li=&show_count=0&child_of='.$current_cat);
+                            }
+                            elseif ($ancestors[0]) {
+                                wp_list_categories('depth=2&hide_empty=0&title_li=&show_count=0&child_of='.$ancestors_cat);
+                            }
+                            else {
+                                wp_list_categories('depth=2&hide_empty=0&title_li=&show_count=0&child_of='.$cat_parent);
+                            }
+                            ?>
                         </ul>
                     </div>
-                </div>
-            </section>
-            <section class="our_pluses">
-                <div class="global_container">
-                    <img src="<?php echo get_template_directory_uri() . '/src/img/devider_vintage.svg' ?>;" data-aos="flip-up">
-                    <h3 class="our_pluses__article">Преимущества</h3>
-                    <div class="our_pluses__container">
-                        <div class="our_pluses__item">
-                            <div class="title">
-                                6 лет<br>
-                                на рынке
-                            </div>
-                            <div class="desc">
-                                Долгое время компания занимает одно из лидирующих мест на рынке предоставления услуг по изготовлению изделий из метала.
-                            </div>
-                        </div>
-                        <div class="our_pluses__item">
-                            <div class="title">
-                                Лазерная <br>
-                                резка
-                            </div>
-                            <div class="desc">
-                                Такое оборудование значительно сокращает время на производство изделий, а также позволяет снизить его итоговую стоимость.
-                            </div>
-                        </div>
-                        <div class="our_pluses__item">
-                            <div class="title">
-                                Дробеструйная <br>
-                                обработка
-                            </div>
-                            <div class="desc">
-                                Технология применяется для: чистки и защиты металла, удаления окалин после ковки, зачистки после сварки и другого.
-                            </div>
-                        </div>
-                        <div class="our_pluses__item">
-                            <div class="title">
-                                Создание <br>
-                                эскизных проектов
-                            </div>
-                            <div class="desc">
-                                Наши художники смогут нарисовать эскиз "с нуля" или по готовому варианту. После утверждения мы сможем предоставить расчеты прочности, комфортности и практичного использования изделий.
-                            </div>
-                        </div>
-                        <div class="our_pluses__item">
-                            <div class="title">
-                                Художественное <br>
-                                нанесение патины
-                            </div>
-                            <div class="desc">
-                                Такой вид оформления значительно влияет на внешний вид изделия, поэтому практически ко всей нашей продукции применяется художественное нанесение патины.
+                    <div class="right_container">
+                        <div class="content_of_page">
+                            <ul class="content_of_page_list">
+                                <?php
 
-                            </div>
+                                $categories = get_categories(array(
+                                    'orderby' => 'name',
+                                    'include' => '2,18,17,16,14,3,19,20,21,22,23,6,5,25,26,24,44,46,45,27,31,32,28,30,29,48,33,36,37,34,38,35,39,40,41,42,43',
+//                      'exclude' => '11',
+                                    'order' => 'ASC'
+                                ));
+                                foreach ($categories as $args) : ?>
+                                    <li class="categories_items__container__item" style="background-image:url(<?php echo z_taxonomy_image_url($args->term_id); ?>" data-aos="zoom-in-up">
+                                        <a class="titl_lnk" href="<?php echo get_category_link($args->term_id); ?>"><span class="title"><?php echo $args->cat_name; ?></span></a>
+                                        <a href="<?php echo get_category_link($args->term_id); ?>"></a>
+                                        <div class="desc">
+                                            <span class="description">
+                                            <?php echo category_description($args->term_id); ?>
+                                            </span>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
-                        <div class="our_pluses__item">
-                            <div class="title">
-                                Индидуальный<br>
-                                подход
+                        <section class="our_pluses">
+                            <div class="our_pluses_container">
+                                <img src="<?php echo get_template_directory_uri() . '/src/img/devider_vintage.svg' ?>;" data-aos="flip-up">
+                                <h3 class="our_pluses__article">Преимущества</h3>
+                                <div class="our_pluses__container">
+                                    <div class="our_pluses__item">
+                                        <div class="title">
+                                            6 лет<br>
+                                            на рынке
+                                        </div>
+                                        <div class="desc">
+                                            Долгое время компания занимает одно из лидирующих мест на рынке предоставления услуг по изготовлению изделий из метала.
+                                        </div>
+                                    </div>
+                                    <div class="our_pluses__item">
+                                        <div class="title">
+                                            Лазерная <br>
+                                            резка
+                                        </div>
+                                        <div class="desc">
+                                            Такое оборудование значительно сокращает время на производство изделий, а также позволяет снизить его итоговую стоимость.
+                                        </div>
+                                    </div>
+                                    <div class="our_pluses__item">
+                                        <div class="title">
+                                            Дробеструйная <br>
+                                            обработка
+                                        </div>
+                                        <div class="desc">
+                                            Технология применяется для: чистки и защиты металла, удаления окалин после ковки, зачистки после сварки и другого.
+                                        </div>
+                                    </div>
+                                    <div class="our_pluses__item">
+                                        <div class="title">
+                                            Создание <br>
+                                            эскизных проектов
+                                        </div>
+                                        <div class="desc">
+                                            Наши художники смогут нарисовать эскиз "с нуля" или по готовому варианту. После утверждения мы сможем предоставить расчеты прочности, комфортности и практичного использования изделий.
+                                        </div>
+                                    </div>
+                                    <div class="our_pluses__item">
+                                        <div class="title">
+                                            Художественное <br>
+                                            нанесение патины
+                                        </div>
+                                        <div class="desc">
+                                            Такой вид оформления значительно влияет на внешний вид изделия, поэтому практически ко всей нашей продукции применяется художественное нанесение патины.
+
+                                        </div>
+                                    </div>
+                                    <div class="our_pluses__item">
+                                        <div class="title">
+                                            Индидуальный<br>
+                                            подход
+                                        </div>
+                                        <div class="desc">
+                                            Мы предлагаем уникальные, а не шаблонные изделия исходя из пожеланий клиента и его материальных возможностей.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="desc">
-                                Мы предлагаем уникальные, а не шаблонные изделия исходя из пожеланий клиента и его материальных возможностей.
-                            </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
-            </section>
-            <section class="reviews" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/category_descriptions_bg.jpg);">
-                <div class="global_container">
-                    <img src="<?php echo get_template_directory_uri() . '/src/img/devider_vintage.svg' ?>;" data-aos="flip-up">
-                    <h3 class="our_pluses__article">Отзывы наших клиентов</h3>
-                    <div class="reviews__container">
-                        <div class="reviews__item">
-                            <div class="reviews__pers">
-                                <div class="date">
-                                    10 мая 2020
-                                </div>
-                                <div class="name">
-                                    Алина Самойлова
-                                </div>
-                                <div class="subj">
-                                    Заказали новый забор для дачного участка. Работу выполнили очень быстро! Нам все понравилось!
-                                </div>
-                            </div>
-                            <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/rev1.png);">
-                            </div>
-                        </div>
-                        <div class="reviews__item">
-                            <div class="reviews__pers">
-                                <div class="date">
-                                    15 сентября 2019
-                                </div>
-                                <div class="name">
-                                    Оксана Макаренко
-                                </div>
-                                <div class="subj">
-                                    Обратились в эту компанию не случайно! Друзья очень хорошо отзывались о PLUTOS great. Мастера сделали нам прекрасную беседку, теперь каждое утро пьем кофе на свежем воздухе!
-                                </div>
-                            </div>
-                            <div class="image" style="background-image:url(<?php echo get_template_directory_uri(); ?>/src/img/rev2.png);">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            </div>
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
 //get_sidebar();

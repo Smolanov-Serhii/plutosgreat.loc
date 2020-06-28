@@ -46,6 +46,7 @@
                 </div>
             </div>
             <div class="feedback">
+                Заказать просчёт.
                 <?php echo do_shortcode( '[contact-form-7 id="92" title="Форма футер"]' ); ?>
             </div>
 		</div><!-- .site-info -->

@@ -29,9 +29,9 @@ li {
 #masthead {
   width: 100%;
   position: relative;
-  height: 100vh;
+  height: auto;
   max-height: 900vw * $px;
-
+  z-index: 5;
   div[id*=metaslider] {
     padding: 0;
     height: auto;
@@ -68,27 +68,29 @@ li {
   }
 
   .pre_header {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
 
     .main_navigation {
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: #3F1B07;
       color: white;
 
       ul {
         list-style: none;
         display: flex;
-        justify-content: center;
-        margin: 0;
+        justify-content: flex-start;
+        margin: auto;
         padding: 0;
+        max-width: 1200px;
 
         li {
           position: relative;
           padding: 10vw * $px 30vw * $px;
           display: flex;
+          border-right: 1px solid rgba(255,255,255,0.2);
+          &:first-child{
+            border-left: 1px solid rgba(255,255,255,0.2);
+          }
           a {
             text-align: right;
             font-family: Alice;
@@ -571,12 +573,15 @@ li {
   width: 100%;
   padding: 0 0 40vw * $px 0;
   box-sizing: border-box;
-  .global_container{
+  display: flex;
+  flex-direction: column;
+  .our_pluses_container{
     margin: auto;
+    padding-left: 30px;
     img{
       display: block;
       margin: 2.3613vw auto;
-      height: 8.7507vw;
+      height: 4.7507vw;
       width: auto;
     }
     h3{
@@ -594,7 +599,7 @@ li {
       justify-content: space-between;
       flex-wrap: wrap;
       .our_pluses__item{
-        width: calc(33.3% - 40px);
+        width: calc(50% - 40px);
         margin-bottom: 24vw * $px;
         .title{
           font-family: Alice;
@@ -867,10 +872,21 @@ section.carousel{
     max-width: 1200px;
     width: 100%;
     margin: auto;
+    position: relative;
     .global_container_category_list{
       padding-left: 0;
       width: 30%;
       background-color: rgba(0,0,0,0.3);
+      &:before{
+        position: absolute;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background-color: rgba(0,0,0,.3);
+      }
       .page-header{
         .page-title{
           text-decoration: none;
@@ -936,6 +952,60 @@ section.carousel{
       .content_of_page{
         .content_of_page_list{
           list-style: none;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-top: 84px;
+          padding-left: 30px;
+          .categories_items__container__item{
+            width: calc(50% - 30px);
+            height: 300px;
+            position: relative;
+            margin-bottom: 60px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            .titl_lnk{
+              position: absolute;
+              top: -30px;
+              left: 0;
+              text-decoration: none;
+            }
+            .title{
+              font-family: Alice;
+              font-size: 1.6vw;
+              color: black;
+
+            }
+            &:hover{
+              .desc{
+                opacity: 1;
+                transition-duration: 0.3s;
+              }
+            }
+            .desc{
+              background-color: rgba(63,27,7,0.8);
+              color: white;
+              position: absolute;
+              bottom: 0;
+              padding: 20px;
+              opacity: 0;
+              transition-duration: 0.3s;
+              p{
+              .description{
+                  margin: 0;
+                }
+              }
+            }
+            a{
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              z-index: 3;
+            }
+          }
         }
       }
       .description_content{
