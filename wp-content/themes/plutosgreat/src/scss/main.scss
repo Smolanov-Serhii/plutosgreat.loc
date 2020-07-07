@@ -873,6 +873,81 @@ section.carousel{
     width: 100%;
     margin: auto;
     position: relative;
+    .right_container_category{
+      display: flex;
+      width: 70%;
+      padding-left: 30px;
+      box-sizing: border-box;
+      flex-direction: column;
+      .content_of_page{
+        width: 100%;
+        margin-top: 30px;
+        .parrent_block{
+          width: 100%;
+          .image_id{
+            img{
+              width: 100%;
+              height: auto;
+            }
+          }
+          .desc_content{
+            p{
+              font-family: Alice;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.2501vw;
+              line-height: 1.45845vw;
+              text-align: justify;
+              color: #000;
+            }
+          }
+        }
+        .dotter_list{
+          .dotter_list_items{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            list-style: none;
+            .wp-pagenavi{
+              margin: 30px auto 60px auto;
+            }
+            .dotter_list_item{
+              width: calc(50% - 15px);
+              margin-bottom: 30px;
+              article{
+                width: 100%;
+                .post-thumbnail{
+                  display: block;
+                  width: 100%;
+                  position: relative;
+                  overflow: hidden;
+                  height: 230px;
+                  img{
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                  }
+                }
+                .entry-header{
+                  display: none;
+                }
+                .entry-content{
+                  display: none;
+                }
+                .entry-footer{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .global_container_category_list{
       padding-left: 0;
       width: 30%;

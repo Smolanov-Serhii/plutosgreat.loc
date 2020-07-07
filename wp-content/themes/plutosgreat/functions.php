@@ -7,6 +7,38 @@
  * @package plutosgreat
  */
 // удаляет H2 из шаблона пагинации
+
+function mayak_cats_images(){
+    $ags = array(
+        'taxonomy'=>'category',
+        'parent' => get_query_var('cat'),
+        'meta_query' => array(array('key' => 'id-cat-images',)),
+    );
+    $terms = get_terms($ags);
+    $count = count($terms);
+    if($count > 0){
+        echo '<div class="cat-thumbnail"><ul>';
+        foreach ($terms as $term) {
+            $term_taxonomy_id = $term->term_taxonomy_id;
+            $image_id = get_term_meta ( $term_taxonomy_id, 'id-cat-images', true );
+            echo '<li>
+       <a href="' .get_category_link($term_taxonomy_id).'">' .wp_get_attachment_image ( $image_id, 'thumbnail' ). '</a>
+       <a href="' .get_category_link($term_taxonomy_id).'">'. $term->name.'</a>
+       </li>';
+        }
+        echo '</ul></div>';
+    }
+}
+
+
+foreach ( array( 'pre_term_description' ) as $filter ) {
+    remove_filter( $filter, 'wp_filter_kses' );
+}
+
+foreach ( array( 'term_description' ) as $filter ) {
+    remove_filter( $filter, 'wp_kses_data' );
+}
+
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
 function my_navigation_template( $template, $class ){
     /*
