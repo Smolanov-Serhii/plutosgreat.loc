@@ -19,25 +19,10 @@ get_header();
                             <h2 class="page-title">Каталог</h2>
                         </div>
                         <ul class="list">
-                            <?php
-                            global $post;
-                            $category = get_the_category( get_the_ID() );
-                            $cat = get_category(get_query_var('cat'),false);
-                            $cat_parent = $cat->parent; // ID родительской категории
-                            $current_cat = get_query_var('cat'); // ID текущей категории
-                            $cat_top = $category[0]->parent;
-                            $ancestors = get_ancestors($cat_top, 'category');
-                            $ancestors_cat = $ancestors[0];
-                            if ($cat_parent == 0) {
-                                wp_list_categories('depth=2&hide_empty=0&title_li=&show_count=0&child_of='.$current_cat);
-                            }
-                            elseif ($ancestors[0]) {
-                                wp_list_categories('depth=2&hide_empty=0&title_li=&show_count=0&child_of='.$ancestors_cat);
-                            }
-                            else {
-                                wp_list_categories('depth=2&hide_empty=0&title_li=&show_count=0&child_of='.$cat_parent);
-                            }
-                            ?>
+                            <?php wp_nav_menu(array(
+                                'theme_location' => 'mobile_menu',
+                                'menu_id' => 'Меню мобильное Бургер',
+                            )); ?>
                         </ul>
                     </div>
                     <div class="right_container">

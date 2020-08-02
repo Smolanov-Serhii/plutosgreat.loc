@@ -12,9 +12,16 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<div id="site-main_single_page" class="site-main_single_page">
+            <div class="breadcrumbs">
+                <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
+            </div>
             <span class="title">
 
-                <?php  $cat_id = get_category($category); echo get_cat_name($cat_id);?>
+                <?php
+                if( is_category() )
+                    echo get_queried_object()->name;
+
+                ?>
 
             </span>
 		<?php
