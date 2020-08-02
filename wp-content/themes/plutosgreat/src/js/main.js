@@ -1,6 +1,13 @@
 $(document).on('click', '#sandwichmenu', function () {
-    $('#sandwichmenu').toggleClass("active");
-    $('#main .global_container_category_list .list').fadeToggle(300);
+    if ($("#main .global_container_category_list .list").length > 0) {
+        $('#main .global_container_category_list .list').fadeToggle(300);
+    }
+    if ($("#sandwichmenu").length > 0) {
+        $('#sandwichmenu').toggleClass('active');
+    }
+    // if ($("#primary .list").length > 0) {
+    //     $('#primary .list').fadeToggle(300);
+    // }
 });
 
 $(document).on('click', '.global_container_catalog_page .list .menu-item', function () {

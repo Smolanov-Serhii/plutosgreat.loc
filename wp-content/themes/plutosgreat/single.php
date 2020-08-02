@@ -9,8 +9,24 @@
 
 get_header();
 ?>
+    <div id="primary_single" class="content-area">
+        <main id="main" class="site-main">
+            <div class="curent_category_description">
+                <div class="global_container_catalog_page">
+                    <div class="global_container_category_list" >
+                        <ul class="list">
+                            <?php wp_nav_menu(array(
+                                'theme_location' => 'mobile_menu',
+                                'menu_id' => 'Меню мобильное Бургер',
+                            )); ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+	<div id="primary" class="content-area right_container_category">
 
-	<div id="primary" class="content-area">
 		<div id="site-main_single_page" class="site-main_single_page">
             <div class="breadcrumbs">
                 <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
