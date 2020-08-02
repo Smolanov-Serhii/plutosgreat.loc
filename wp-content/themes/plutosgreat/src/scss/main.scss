@@ -1884,12 +1884,16 @@ section.carousel{
                 .kama_breadcrumbs{
                   flex-wrap: wrap;
                   justify-content: flex-start;
+                  .kb_sep{
+                    margin: 0 5vw * $pxm;
+                  }
                   span{
                     font-size: 18vw * $pxm;
                     line-height: 18vw * $pxm;
                     font-family: 'PT Sans', sans-serif;
                     margin-bottom: 10px;
                     display: inline-block;
+                    align-items: center;
                     a{
                       text-decoration: none;
                       opacity: 0.8;
@@ -2257,9 +2261,13 @@ section.carousel{
             .kama_breadcrumbs{
               flex-wrap: wrap;
               justify-content: flex-start;
+              .kb_sep{
+                margin: 0 5vw * $pxm;
+              }
               > span{
                 margin-bottom: 10px;
                 display: inline-block;
+                align-items: center;
               }
               span{
                 font-size: 18vw * $pxm;
